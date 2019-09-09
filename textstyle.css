@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.code{
+  height: 100vh;
+  overflow: auto;
+}
+.content{
+  
+}
+.token.selector{ color:rgb(163, 163, 163); }
+.token.property{ color:rgb(163, 163, 163);}
+.token.punctuation{ color:rgb(163, 163, 163); } 
+.token.function{ color:rgb(163, 163, 163); }
