@@ -8,7 +8,8 @@
   overflow: auto;
 }
 .content{
-  
+  padding-left: 20px;
+  margin-top: 20px;
 }
 .token.selector{ color:rgb(163, 163, 163); }
 .token.property{ color:rgb(163, 163, 163);}

@@ -55,34 +55,39 @@ html{
   width: 48vw; height: 90vh;
   border: 1px solid;
   background: white; color: #222;
-  overflow: auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  overflow:auto;
 }
 `
-  let mdCode = `
-  # 自我介绍
-  我叫方博楷，毕业于广东工业大学，从大二下学期开始自学前端，希望面试前端开发岗位。
-
+let mdCode = `
+# 自我介绍 
+<br> 
+我叫方博楷，毕业于广东工业大学，从大二下学期开始自学前端，希望面试前端开发岗位。  
+  
+  
 # 掌握技能
-- 熟悉HTML & CSS & JavaScript
-- 熟悉HTTP知识
-- 熟练使用Vue
-- 掌握Scss Webpack Parcel
-- 熟悉Node.js
+  
+  
+- 熟悉HTML & CSS & JavaScript  
+- 熟悉HTTP知识  
+- 熟练使用Vue  
+- 掌握Scss Webpack Parcel  
+- 熟悉Node.js  
+
 
 # 项目介绍
-1. Canvas画板
-2. 动态简历
-3. 原生JS 瀑布流
-4. 原生JS轮播图
-5. CSS3加载画面
+
+1. Canvas画板  
+2. 动态简历  
+3. 原生JS瀑布流  
+4. 原生JS轮播图  
+5. CSS3加载画面  
+
 
 # 联系方式
-- 手机 1xxxxxxxx
-- 邮箱 1092554430@qq.com
-- QQ 1092554430
+
+- 手机:1xxxxxxxx  
+- 邮箱:1092554430@qq.com  
+- QQ:1092554430  
 `
 
 codeWriting(cssCode,()=>{
@@ -100,22 +105,26 @@ function codeWriting(cssCode,callback){
     window.clearInterval(timer)
     callback()
   }
-},10)
+},40)
 }
 function whitePaper(){
   let paper = document.createElement('pre')  
   paper.id = 'paper'
   paper.className = 'paper'
   document.body.appendChild(paper)
+  let content = document.createElement('div')
+  content.id = 'content'
+  content.className = 'content'
+  paper.appendChild(content)
 } 
-function markdownWriting(mdCode,){
+function markdownWriting(mdCode){
   let codeIndex = 0
   let timer2 = setInterval(()=>{
   codeIndex += 1
-  paper.innerHTML = mdCode.substring(0,codeIndex)
+  content.innerHTML = marked(mdCode.slice(0,codeIndex))
   paper.scrollTop = paper.scrollHeight
   if(codeIndex >= mdCode.length){
     window.clearInterval(timer2)
   }
-},10)
+},30)
 }
